@@ -1,0 +1,39 @@
+<div class="bg-login" relative>
+  <div class="container h-100">
+      <div class="row h-100 justify-content-center">
+        <div class="m-auto col-lg-6">
+          <mat-card>
+            <div [className]="'textAlign' | translate" [dir]="'dir' | translate"> 
+              <div class="Organization-logo">
+                <!-- <img mat-card-image [src]="localizationService.lang == 'en' ? logoFl : logoSl"> -->
+                <mat-card-title>
+                  {{localizationService.lang == 'en' ? "Login" : "تسجيل دخول"}}
+                </mat-card-title>
+              </div>
+              <form [formGroup]="form" (ngSubmit)="authorize()">
+                <div class="example-container col-12">      
+                  <!-- <div  *ngIf="invalidLogin" class="danger">                    
+                    {{'Login.InvalidUserNameorPassword' | translate}}
+                  </div> -->      
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="{{'Login.UserName' | translate}}" formControlName="userName">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input [type]="hide ? 'password' : 'text'" matInput placeholder="{{'Login.Password' | translate}}" formControlName="password">
+                   <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </mat-form-field>
+                  <div class="d-flex justify-content-between">
+                  <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">{{'Login.submit' | translate}}</button>
+                  <button mat-stroked-button color="primary" (click)="changeLanguage('ar')"
+                    *ngIf="localizationService.lang == 'en'">عربى</button>
+                  <button mat-stroked-button color="primary" (click)="changeLanguage('en')"
+                    *ngIf="localizationService.lang == 'ar'">English</button>
+                  </div>
+                </div>
+              </form>
+            </div>      
+          </mat-card>  
+        </div>        
+      </div>
+  </div>
+</div>
