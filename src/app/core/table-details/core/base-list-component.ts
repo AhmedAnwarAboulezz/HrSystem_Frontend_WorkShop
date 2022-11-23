@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Shell } from '../../../component/shell';
 import { Router } from '@angular/router';
 import { Result } from '../models/Result';
-import { DataService, APIs } from '../../../services/shared';
+import { DataService } from '../../../services/shared';
 import { TableDetailsComponent } from '../table-details.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertService } from 'src/app/services/AlertService';
@@ -19,7 +19,7 @@ export abstract class BaseListComponent implements OnInit, AfterViewInit {
         return Shell.Injector.get(LocalizationService);
       }
     get Alert(): AlertService { return Shell.Injector.get(AlertService); }
-    get Route(): Router { return Shell.Injector.get(Router); }
+    get Route(): Router { return Shell.Injector.get(Router); } 
     get authService(): AuthService { return Shell.Injector.get(AuthService); }
     roles: { canAdd: any; };
     list: any[] = [];

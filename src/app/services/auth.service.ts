@@ -2,7 +2,6 @@ import { Screen } from './../models/Screen';
 import { Injectable } from '@angular/core';
 import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 import { DataService } from 'src/app/services/data.service';
-import { APIs } from './APIs';
 import 'rxjs/add/operator/map';
 import { Menu } from '../models/Menu';
 import { Permissions } from '../models/Permissions';

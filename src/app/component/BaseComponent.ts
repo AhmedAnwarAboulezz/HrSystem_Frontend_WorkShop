@@ -1,6 +1,6 @@
 import { Shell } from './shell';
 import { AlertService } from '../services/AlertService';
-import { DataService, APIs } from '../services/shared';
+import { DataService } from '../services/shared';
 import { LocalizationService } from '../services/localization/localization.service';
 import { HttpService } from '../services/http/http.service';
 export abstract class BaseComponent {

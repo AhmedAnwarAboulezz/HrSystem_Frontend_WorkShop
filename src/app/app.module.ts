@@ -12,7 +12,6 @@ import { MaterialModule } from './material-module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { LoginComponent } from './component/login/login.component';
 
-import { APIs } from './services/shared';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { DataService } from './services/data.service';
 import { TokenInterceptor } from './interceptors/tokenInterceptor';
@@ -69,7 +68,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConfigModule.forRoot(environment)
   ],
   exports: [TranslateModule],
-  providers: [APIs, DataService, AuthGuard,TokenService,
+  providers: [DataService, AuthGuard,TokenService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
