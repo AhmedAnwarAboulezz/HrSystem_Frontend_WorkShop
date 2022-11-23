@@ -29,7 +29,7 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
   };
   public columns: ColumnsInterface[] = [
     {
-      field: 'employeeNumber',
+      field: 'code',
       header: 'employees.employeeNumber',
       filterMode: 'text',
       selector: true,
@@ -37,7 +37,7 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
       sort: true
     },
     {
-      field: 'firstName',
+      field: 'nameFl',
       header: 'employees.employeeNameFirst',
       filterMode: 'text',
       selector: true,
@@ -45,7 +45,7 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
       sort: true
     },
     {
-      field: 'lastName',
+      field: 'nameSl',
       header: 'employees.employeeNameSecond',
       filterMode: 'text',
       selector: true,
@@ -53,100 +53,100 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
       sort: true
     },
     {
-      field: 'otherName',
+      field: 'phoneNumber',
       header: 'employees.employeeNameOther',
       filterMode: 'text',
       selector: true,
       print: true,
       sort: true
     },
-    {
-      field: 'adminLevelName',
-      header: 'employees.adminLevel',
-      dropdownFilterName: 'adminLevelId',
-      filterMode: 'dropdown',
-      selector: true,
-      print: true,
-      sort: true,
-      sortName:'adminLevelName'
+    // {
+    //   field: 'adminLevelName',
+    //   header: 'employees.adminLevel',
+    //   dropdownFilterName: 'adminLevelId',
+    //   filterMode: 'dropdown',
+    //   selector: true,
+    //   print: true,
+    //   sort: true,
+    //   sortName:'adminLevelName'
 
-    },
-    {
-      field: 'fingerPrintSecurityLevelName',
-      header: 'employees.fingerPrintSecurityLevel',
-      dropdownFilterName: 'fingerPrintSecurityLevelId',
-      filterMode: 'dropdown',
-      selector: true,
-      print: true,
-      sort: true,
-      sortName:'fingerPrintSecurityLevelName'
+    // },
+    // {
+    //   field: 'fingerPrintSecurityLevelName',
+    //   header: 'employees.fingerPrintSecurityLevel',
+    //   dropdownFilterName: 'fingerPrintSecurityLevelId',
+    //   filterMode: 'dropdown',
+    //   selector: true,
+    //   print: true,
+    //   sort: true,
+    //   sortName:'fingerPrintSecurityLevelName'
 
-    },
+    // },
 
-    {
-      field: 'isUsePassword',
-      header: 'employees.isUsePassword',
-      filterMode: 'check',
+    // {
+    //   field: 'isUsePassword',
+    //   header: 'employees.isUsePassword',
+    //   filterMode: 'check',
       
-      selector: true ,
-      print: true,
-      sort: true     
-    },
-    {
-      field: 'isUseSmartCard',
-      header: 'employees.isUseSmartCard',
-      filterMode: 'check',
+    //   selector: true ,
+    //   print: true,
+    //   sort: true     
+    // },
+    // {
+    //   field: 'isUseSmartCard',
+    //   header: 'employees.isUseSmartCard',
+    //   filterMode: 'check',
       
-      selector: true ,
-      print: true,
-      sort: true     
-    }
-    ,
-    {
-      field: 'isUseFingerPrint',
-      header: 'employees.isUseFingerPrint',
-      filterMode: 'check',
+    //   selector: true ,
+    //   print: true,
+    //   sort: true     
+    // }
+    // ,
+    // {
+    //   field: 'isUseFingerPrint',
+    //   header: 'employees.isUseFingerPrint',
+    //   filterMode: 'check',
       
-      selector: true ,
-      print: true,
-      sort: true     
-    } ,
-    {
-      field: 'isFingerPrintAutoMatch',
-      header: 'employees.isFingerPrintAutoMatch',
-      filterMode: 'check',
+    //   selector: true ,
+    //   print: true,
+    //   sort: true     
+    // } ,
+    // {
+    //   field: 'isFingerPrintAutoMatch',
+    //   header: 'employees.isFingerPrintAutoMatch',
+    //   filterMode: 'check',
       
-      selector: true ,
-      print: true,
-      sort: true     
-    } ,
-    {
-      field: 'isUseFace',
-      header: 'employees.isUseFace',
-      filterMode: 'check',
+    //   selector: true ,
+    //   print: true,
+    //   sort: true     
+    // } ,
+    // {
+    //   field: 'isUseFace',
+    //   header: 'employees.isUseFace',
+    //   filterMode: 'check',
       
-      selector: true ,
-      print: true,
-      sort: true     
-    },
-    {
-      field: 'isFaceAutoMatch',
-      header: 'employees.isFaceAutoMatch',
-      filterMode: 'check',
+    //   selector: true ,
+    //   print: true,
+    //   sort: true     
+    // },
+    // {
+    //   field: 'isFaceAutoMatch',
+    //   header: 'employees.isFaceAutoMatch',
+    //   filterMode: 'check',
       
-      selector: true ,
-      print: true,
-      sort: true     
-    },
-    {
-      field: 'isActiveEmployee',
-      header: 'employees.isActiveEmployee',
-      filterMode: 'check',
+    //   selector: true ,
+    //   print: true,
+    //   sort: true     
+    // },
+    // {
+    //   field: 'isActiveEmployee',
+    //   header: 'employees.isActiveEmployee',
+    //   filterMode: 'check',
       
-      selector: true ,
-      print: true,
-      sort: true     
-    }
+    //   selector: true ,
+    //   print: true,
+    //   sort: true     
+    // }
   ];
   public actions: ActionsInterface[] = [
     {

@@ -57,7 +57,7 @@ export class DataService {
   //     .pipe(
   //       // you can add the 'any' name here beside the getAll for more detailed error
   //       catchError(this.handleError())
-  //     ).map(res => res.data);
+  //     );
   // }
 
 
@@ -65,7 +65,7 @@ export class DataService {
   //   return this.http.post<any>(url, items, httpOptions)
   //     .pipe(
   //       catchError(this.handleError())
-  //     ).map(res => res.data);
+  //     );
   // }
 
   getActionResult(url: string, options?:any): Observable<any> {
@@ -87,32 +87,32 @@ export class DataService {
     return this.http.get<any>(url, options)
       .pipe(
         catchError(this.handleError())
-      ).map(res => res.data);
+      );
   }
   post(url: string, item: any, options?:any): Observable<any>  {
     let newOptions = (options !== null && options !== undefined) ? options : httpOptions;
     return this.http.post<any>(url, item, newOptions)
       .pipe(
         catchError(this.handleError())
-      ).map(res => res.data);
+      );
   }
   postQueryParamsReq(url: string, data: any, params?: any) {
     return this.http.post<any>(url, data, { params })
     .pipe(
       catchError(this.handleError())
-    ).map(res => res.data);
+    );
   }
   put(url: string, item: any): Observable<any> {
     return this.http.put<any>(url, item, httpOptions)
       .pipe(
         catchError(this.handleError())
-      ).map(res => res.data);
+      );
   }
   delete(url: string): Observable<any> {
     return this.http.delete<any>(url)
       .pipe(
         catchError(this.handleError())
-      ).map(res => res.data);
+      );
   }
 
 

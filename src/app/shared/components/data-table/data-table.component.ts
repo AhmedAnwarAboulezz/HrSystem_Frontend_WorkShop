@@ -116,18 +116,11 @@ export class DataTableComponent implements OnInit, OnDestroy {
       editable: false,
       ...this.options
     };
-    // this.roles = {
-    //   canAdd: true,
-    //   canUpdate: true,
-    //   canDelete: true,
-    //   canPrint: true,
-    // };
-    let permissions = this.authService.getPermissions(this.tableData.componentName);
     this.roles = {
-      canAdd: permissions.add,
-      canUpdate: permissions.update,
-      canDelete: permissions.delete,
-      canPrint: permissions.print,
+      canAdd: true,
+      canUpdate: true,
+      canDelete: true,
+      canPrint: true,
     };
   }
 
@@ -152,6 +145,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
     this.getTableData();
   }
   getColumns(): void {
+    
     let columnsInStorage = JSON.parse(this.Storage.get(this.tableData.componentName));
     if (columnsInStorage != null || columnsInStorage != undefined) {
       this.selectedColumns = [...columnsInStorage.filter(x => !x.editable)];
@@ -164,6 +158,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
   /* set the unselected columns property to false in the original columns array to be unselected in the drop down */
   setUnselectedColumns(): void {
+    
     let diff = this.columns.filter(this.comparer(this.selectedColumns));
     diff.forEach(item => item.selector = false);
   }
@@ -222,10 +217,10 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
   /* Get the Table Data from the Service */
   getTableData(): void {
-    let pageSizeInStorage = JSON.parse(this.Storage.get(this.tableData.componentName + 'pageSize'));
-    if (pageSizeInStorage != null || pageSizeInStorage != undefined) {
-      this.pageSize = pageSizeInStorage;
-    }
+    // let pageSizeInStorage = JSON.parse(this.Storage.get(this.tableData.componentName + 'pageSize'));
+    // if (pageSizeInStorage != null || pageSizeInStorage != undefined) {
+    //   this.pageSize = pageSizeInStorage;
+    // }
     this.tableCore.pageOptions.limit = this.pageSize;
     if (this.url && this.url.getAll) {
 
@@ -234,7 +229,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
         .getAllData(this.url.getAll, this.searchValues)
         .pipe(take(1))
         .subscribe(() => {
-
+          
           this.data = this.tableCore.tableData;
           this.rerender = false;
           this.loaderService.hide();
@@ -263,6 +258,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
   /* Create Array of strings from selected columns */
   updateSelectedColumnsAPI(): void {
+    
     this.filteredArray = [];
     this.selectedColumns.map(col => this.filteredArray.push(col.field));
   }
@@ -333,7 +329,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * Fire When The Table Page Changes
    */
   setPage(pageInfo: any): void {
-    this.Storage.set(this.tableData.componentName + 'pageSize', JSON.stringify(pageInfo.rows));
+    //this.Storage.set(this.tableData.componentName + 'pageSize', JSON.stringify(pageInfo.rows));
     this.tableCore.pageOptions.offset = pageInfo.first / pageInfo.rows + 1;
     this.tableCore.pageOptions.limit = pageInfo.rows;
     this.getTableData();

@@ -74,20 +74,7 @@ export class AuthService {
     this.tokenService.removeTokens();
   }
 
-  getPermissions(componentName: string): Permissions {
-    const screensAuthorities: Menu[] = JSON.parse(this.Storage.get('ScreensAuthorities')) as Menu[];
 
-    for (let item of screensAuthorities) {
-      const roles = item.childerns.find(e => e.componentName.toLowerCase() == componentName.toLowerCase());
-      if (roles) {
-        if ((componentName === 'ImportExcel') && roles.permissions.add) {
-          roles.permissions.add = false;
-        }
-        return roles.permissions;
-      }
-    }
-    return { view: false, add: false, update: false, delete: false, print: false };
-  }
 
   loadScreenAuthorities() {   
     this.service.get('UserMangments/GetScreensAuthorities')
@@ -97,9 +84,9 @@ export class AuthService {
       });
   }
 
-  isLoggedIn(token: string = 'tokenAum') {
-    return tokenNotExpired(token);
-  }
+  // isLoggedIn(token: string = 'tokenHRSys') {
+  //   return tokenNotExpired(token);
+  // }
 
   GetUserBranches(){
     return this.service.get('Branches/GetUserBranchesDropDown');

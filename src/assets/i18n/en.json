@@ -1225,9 +1225,9 @@
     "acceptSheetPassword":"Are you sure you want to change admin password?, changes will takeplace immediatly to the system.",
     "UploadPasswordFile":"Upload Password File",
     "updateAdminPassword":"Update Admin Password",
-    "AumLicences":"Aum Licences",
-    "NumberOfAumUsers":"Number Of Aum Users",
-    "AumExpireDate":"Aum Expire Date",
+    "HRSysLicences":"HRSys Licences",
+    "NumberOfHRSysUsers":"Number Of HRSys Users",
+    "HRSysExpireDate":"HRSys Expire Date",
     "AutoSyncUsergroups":"Auto Sync Usergroups"
   },
   "hourlyRotated": {

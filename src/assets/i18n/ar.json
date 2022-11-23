@@ -1188,9 +1188,9 @@
     "UploadPasswordFile":"رفع ملف كلمة المرور",
     "updateAdminPassword":"تعديل كلمة المرور لمدير النظام",
     "acceptSheetPassword": "هل أنت متأكد من أنك تريد تعديل كلمة مرور مدير النظام؟، عند الموافقة سيتم ظهور التعديلات فى الحال",
-    "AumLicences":"الترخيص",
-    "NumberOfAumUsers":"عدد المستخدمين",
-    "AumExpireDate":"تاريخ انتهاء النظام"
+    "HRSysLicences":"الترخيص",
+    "NumberOfHRSysUsers":"عدد المستخدمين",
+    "HRSysExpireDate":"تاريخ انتهاء النظام"
   },
   "hourlyRotated": {
     "code": "كود",

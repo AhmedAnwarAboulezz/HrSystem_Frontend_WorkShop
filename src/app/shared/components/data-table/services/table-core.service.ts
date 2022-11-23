@@ -57,6 +57,7 @@ export class TableCoreService {
       take(1),
       map((resp: any) => {
         
+        
         this.tableData = resp.list;
         this.pageOptions.count = resp.count;
         this.pageOptions.offset = options.offset + 1;

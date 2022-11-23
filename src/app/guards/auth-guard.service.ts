@@ -39,7 +39,7 @@ import { Observable } from 'rxjs';
         }
       }
       catch{
-        debugger;
+        
         this.alertService.showError('sorry you need to login again');
         this.router.navigate(['/404']);
         return false;

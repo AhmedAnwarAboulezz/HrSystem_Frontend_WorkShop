@@ -32,10 +32,8 @@ export abstract class BaseListComponent implements OnInit, AfterViewInit {
     constructor(componentName: string, url: string) {
         this.componentName = componentName;
         this.url = url;
-        let permissions = this.authService.getPermissions(this.componentName);
         this.roles = {
-            canAdd: permissions.add,
-            //canAdd: true
+            canAdd: true
         };
         this.canAddTemp = this.roles.canAdd;
         this.scrollToBottom();

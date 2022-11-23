@@ -71,12 +71,11 @@ export class TableDetailsComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.paginatorIntl.itemsPerPageLabel = this.translate.instant('pageSize');
     this.getColumnTypes(this.columnTypes);
-    let permissions = this.authService.getPermissions(this.componentName);
     this.roles = {
-      canAdd: permissions.add,
-      canUpdate: permissions.update,
-      canDelete: permissions.delete,
-      canPrint: permissions.print,
+      canAdd: true,
+      canUpdate: true,
+      canDelete: true,
+      canPrint: true,
       // canAdd: true,
       // canUpdate: true,
       // canDelete: true,

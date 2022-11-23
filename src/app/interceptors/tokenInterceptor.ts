@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 import { AlertService } from '../services/AlertService';
 //import { ConfigService } from 'ngx-envconfig';
 import { LoadingService } from '../services/loading/loading.service';
+import { StorageService } from '../services/storage/storage.service';
 
 
 @Injectable({
@@ -26,20 +27,18 @@ export class TokenInterceptor implements HttpInterceptor {
 
 
   constructor(private loadingService: LoadingService, 
-    //private config: ConfigService, 
+    private storage: StorageService, 
     private alertService: AlertService, private router: Router) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    this.token = localStorage.getItem('token');
-    this.basicToken = localStorage.getItem('basic-token');
-    this.serverUrl = "http://localhost:5000/";
-
+    this.basicToken = this.storage.get('basic-token');
+    this.serverUrl = "http://localhost:44364/";
 
     request = request.clone({
       setHeaders: {
         'Content-Type':  'application/json',
-        'Authorization': `Basic ${this.basicToken ? this.basicToken : ''}`
+        'Authorization': `Basic ${this.basicToken ? btoa(this.basicToken) : ''}`
       }
     });
 

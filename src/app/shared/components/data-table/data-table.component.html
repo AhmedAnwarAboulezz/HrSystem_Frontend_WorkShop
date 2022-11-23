@@ -142,6 +142,9 @@
         <th *ngIf="actions"></th>
       </tr>
     </ng-template>
+
+    {{data | json}}
+
     <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
       <tr [pSelectableRow]="rowData">
 

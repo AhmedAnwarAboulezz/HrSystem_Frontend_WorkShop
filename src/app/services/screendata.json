@@ -8,42 +8,7 @@
       "canShow": true,
       "parentId": null,
       "childerns": [
-        {
-          "componentName": "BranchesComponent",
-          "orderNumber": 1,
-          "isReport": false,
-          "urlPath": "/main/lookups/branches",
-          "iconName": "public",
-          "canShow": true,
-          "parentId": 1,
-          "childerns": [],
-          "permissions": {
-            "view": true,
-            "add": true,
-            "update": true,
-            "delete": true,
-            "print": true
-          },
-          "id": 1
-        },
-        {
-          "componentName": "DepartmentsComponent",
-          "orderNumber": 2,
-          "isReport": false,
-          "urlPath": "/main/lookups/departments",
-          "iconName": "flag",
-          "canShow": true,
-          "parentId": 1,
-          "childerns": [],
-          "permissions": {
-            "view": true,
-            "add": true,
-            "update": true,
-            "delete": true,
-            "print": true
-          },
-          "id": 2
-        },
+     
         {
           "componentName": "LocationsComponent",
           "orderNumber": 3,
@@ -61,97 +26,7 @@
             "print": true
           },
           "id": 3
-        },
-        {
-          "componentName": "DevicesComponent",
-          "orderNumber": 4,
-          "isReport": false,
-          "urlPath": "/main/lookups/devices",
-          "iconName": "school",
-          "canShow": true,
-          "parentId": 1,
-          "childerns": [],
-          "permissions": {
-            "view": true,
-            "add": true,
-            "update": true,
-            "delete": true,
-            "print": true
-          },
-          "id": 4
-        },
-        {
-          "componentName": "GroupsComponent",
-          "orderNumber": 5,
-          "isReport": false,
-          "urlPath": "/main/lookups/groups",
-          "iconName": "work",
-          "canShow": true,
-          "parentId": 1,
-          "childerns": [],
-          "permissions": {
-            "view": true,
-            "add": true,
-            "update": true,
-            "delete": true,
-            "print": true
-          },
-          "id": 5
-        },
-        {
-          "componentName": "TriggersComponent",
-          "orderNumber": 6,
-          "isReport": false,
-          "urlPath": "/main/lookups/triggers",
-          "iconName": "trending_up",
-          "canShow": true,
-          "parentId": 1,
-          "childerns": [],
-          "permissions": {
-            "view": true,
-            "add": true,
-            "update": true,
-            "delete": true,
-            "print": true
-          },
-          "id": 6
-        },
-        {
-          "componentName": "AccessDoorsComponent",
-          "orderNumber": 7,
-          "isReport": false,
-          "urlPath": "/main/lookups/accessDoors",
-          "iconName": "import_contacts",
-          "canShow": true,
-          "parentId": 1,
-          "childerns": [],
-          "permissions": {
-            "view": true,
-            "add": true,
-            "update": true,
-            "delete": true,
-            "print": true
-          },
-          "id": 7
-        },
-        {
-          "componentName": "HolidaiesComponent",
-          "orderNumber": 8,
-          "isReport": false,
-          "urlPath": "/main/lookups/holidaies",
-          "iconName": "domain",
-          "canShow": true,
-          "parentId": 1,
-          "childerns": [],
-          "permissions": {
-            "view": true,
-            "add": true,
-            "update": true,
-            "delete": true,
-            "print": true
-          },
-          "id": 8
-        }
+        }        
       ],
       "permissions": null,
       "id": 1
