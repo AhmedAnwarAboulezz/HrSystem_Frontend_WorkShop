@@ -27,36 +27,36 @@ export class EmployeeManualLogsComponent extends BaseListComponent implements On
   };
   public columns: ColumnsInterface[] = [
     {
-      field: 'employeeNumber',
+      field: 'employeeCode',
       header: 'employeeLogManual.employeeNumber',
       filterMode: 'text',
       selector: true,
       print: true,
       sort: true,
-      sortName:'employee.employeeNumber'
+      sortName:'employee.code'
     },
     {
-      field: 'employeeName',
+      field: 'nameFl',
       header: 'employeeLogManual.employeeName',
       filterMode: 'text',
       selector: true,
       print: true,
-      sort: true,
-      sortName:'employee.firstName'
+      sort: true,      
+      sortName:'employee.name'
     },
+    // {
+    //   field: 'field.logTypeName',
+    //   header: 'employeeLogManual.logType',
+    //   dropdownFilterName: 'logTypeIds',
+    //   filterMode: 'dropdown',
+    //   selector: true,
+    //   print: true,
+    //   sort: true,
+    //   sortName:'logType.LogTypeNameEn'
+    // },
     {
-      field: 'field.logTypeName',
-      header: 'employeeLogManual.logType',
-      dropdownFilterName: 'logTypeIds',
-      filterMode: 'dropdown',
-      selector: true,
-      print: true,
-      sort: true,
-      sortName:'logType.LogTypeNameEn'
-    },
-    {
-      field: 'logDate',
-      printField: 'logDateStr',
+      field: 'dayDate',
+      printField: 'dayDateStr',
       header: 'employeeLogManual.logDate',
       filterMode: 'date',
       selector: true,
@@ -64,7 +64,15 @@ export class EmployeeManualLogsComponent extends BaseListComponent implements On
       sort: true
     },
     {
-      field: 'logTime',
+      field: 'signInTime',
+      header: 'employeeLogManual.logTime',
+      filterMode: 'time',
+      selector: true,
+      print: true,
+      sort: true
+    },
+    {
+      field: 'signOutTime',
       header: 'employeeLogManual.logTime',
       filterMode: 'time',
       selector: true,

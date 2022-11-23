@@ -1,4 +1,3 @@
-import { Permissions } from './Permissions';
 
 export class Menu {
     id?: string;
@@ -10,5 +9,4 @@ export class Menu {
     canShow?: boolean;
     parentId?: string;
     childerns?: Menu[];
-    permissions: Permissions;
 }

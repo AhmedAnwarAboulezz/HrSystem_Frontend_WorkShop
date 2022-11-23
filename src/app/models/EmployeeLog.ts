@@ -1,11 +1,9 @@
 export class EmployeeLog {
-    employeeId?: number;
-    employeeNumber?: string;
+    employeeId?: string;
+    employeeCode?: string;
     employeeName?: string;
-    logDate?: Date;
-    logTime?: string;
-    logTypeId?: string;
-    logTypeNameFl?: string;
-    logTypeNameSl?: string;
+    dayDate?: Date;
+    signInTime?: string;
+    signOutTime?: string;
     id?: string;
 }

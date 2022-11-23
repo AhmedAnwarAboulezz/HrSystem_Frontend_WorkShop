@@ -5,9 +5,10 @@
         <mat-dialog-content class="mat-typography" [formGroup]="form">
         <div class="example-container">
             <div class="col-md-12">
-            <app-select [url]="'Employees/GetEmployeeDropDown'" [disabledCondition]="isDisable" formControlName="employeeId"
-            [name]="'field.fullName' | translate" [isSearchable]="true" [hasTemplate]="true" [isMultiple]="false"
-            [placeholder]="'employeeSelect' | translate" (cancelEvent)="onEmployeeCancel()"></app-select>
+                {{form.value.employeeId}}
+                <app-select [url]="'Employees/GetDropdownList'" [disabledCondition]="isDisable" formControlName="employeeId"
+                [name]="'field.fullName' | translate" [isSearchable]="true" [hasTemplate]="true" [isMultiple]="false"
+                [placeholder]="'employeeSelect' | translate" (cancelEvent)="onEmployeeCancel()"></app-select>
             </div>
             <div>
                 <app-mat-datepicker-shared 
@@ -16,20 +17,18 @@
                 [required]="true" 
                 [title]="'lookup.tooltip' | translate"   
                 [matDatepicker]="'startDatePicker'"
-                [namecontrol]="'logDate'"
+                [namecontrol]="'dayDate'"
                 >
                 </app-mat-datepicker-shared> 
             </div>
+
             <mat-form-field appearance="outline" > 
-                <input required title="{{'lookup.tooltip' | translate}}" matInput type="time" formControlName="logTime" placeholder="{{'employeeLogManual.logTime' | translate}}">
+                <input required title="{{'lookup.tooltip' | translate}}" matInput type="time" formControlName="signInTime" placeholder="{{'employeeLogManual.logIn' | translate}}">
             </mat-form-field>
-            <mat-form-field appearance="outline" >
-                <mat-label>{{'employeeLogManual.logType' | translate}}</mat-label>
-                <mat-select required formControlName="logTypeId">
-                    <mat-option *ngFor="let log of logTypes" [value]="log.id">
-                    {{ localize.currentLang =='Fl' ? log.logTypeNameEn : log.logTypeNameAr }}</mat-option>
-                </mat-select>
-            </mat-form-field>  
+            <mat-form-field appearance="outline" > 
+                <input required title="{{'lookup.tooltip' | translate}}" matInput type="time" formControlName="signOutTime" placeholder="{{'employeeLogManual.logOut' | translate}}">
+            </mat-form-field>
+            
         </div>
         </mat-dialog-content>
     </mat-card>  

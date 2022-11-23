@@ -30,20 +30,21 @@ export class EmployeeManualLogComponent extends BaseEditComponent implements OnI
   ) {
     super(dialogRef);
     this.getLookups();
+    debugger;
     if (this.data) {
       this.model = this.data;
       this.isNew = false;
       this.isDisable = true;
     }
     else{
-      this.model.employeeId = 0;
+      //this.model.employeeId = 0;
     }
     this.form = fb.group({
       id: [this.model.id],
       employeeId: [this.model.employeeId, Validators.required],
-      logDate: [this.model.logDate, Validators.required],
-      logTime: [this.model.logTime, Validators.required],
-      logTypeId: [this.model.logTypeId, Validators.required],
+      dayDate: [this.model.dayDate, Validators.required],
+      signInTime: [this.model.signInTime, Validators.required],
+      signOutTime: [this.model.signOutTime],
     });
   }
 

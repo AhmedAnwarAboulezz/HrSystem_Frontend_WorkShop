@@ -118,13 +118,13 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
       .pipe(take(1))
       .subscribe((resp: any) => {
         
-        this.itemsSearchNo = resp.data.count;
+        this.itemsSearchNo = resp.count;
         this.getPagenationOptions.offset++;
         this.loading = false;
         if (
-          JSON.stringify(this.itemsData) !== JSON.stringify(resp.data.list)
+          JSON.stringify(this.itemsData) !== JSON.stringify(resp.list)
         ) {
-          this.itemsData = this.itemsData.concat(resp.data.list);
+          this.itemsData = this.itemsData.concat(resp.list);
         }
         if (!this.isMultiple && this.val) {
           this.selectedValue = this.itemsData.find(x => x.id == this.val);
@@ -142,6 +142,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
       });
   }
   itemSelected(event) {
+    debugger;
     
     if (event) {
       const items: any = [];
@@ -152,7 +153,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
         this.selectedValue = event;
         this.onChange(event.id);
       }
-      this.selectChangeEvent.emit(event);
+      //this.selectChangeEvent.emit(event);
     } else {
       this.cancelEvent.emit();
     }

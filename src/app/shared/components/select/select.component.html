@@ -1,18 +1,26 @@
 
 <span class="selectDropDown">
-    <ng-select [disabled]="disabledCondition"  #myselect [items]="itemsData"  
-    [(ngModel)]="selectedValue" [bindLabel]="name" [bindValue]="id" class="ngSelect"
-        [appendTo]="'.selectDropDown'" [placeholder]="placeholder" [searchable]="isSearchable" 
+    <ng-select   
+    #myselect [items]="itemsData"  
+    [(ngModel)]="selectedValue"
+     [bindLabel]="nameFl" 
+     [bindValue]="id" 
+     class="ngSelect"
+        [appendTo]="'.selectDropDown'" 
+        [placeholder]="placeholder"
+         [searchable]="isSearchable" 
         [multiple]="isMultiple"
         [virtualScroll]="isVirtualScroll" [loading]="loading" (change)="itemSelected($event)"
         (scrollToEnd)="onScrollToEnd()" [typeahead]="InputSearch$" 
         [notFoundText]="'noEmployeefound'| translate"> 
-        <ng-template *ngIf="hasTemplate" ng-option-tmp let-item="item" let-search="searchTerm">
+        <ng-template  ng-option-tmp let-item="item" let-search="searchTerm">
             <div>
-                <div class="row" [class.OutOff]="!item.isActive" [class.right] ="localize.lang === 'ar'" style=" font-size: medium; ">
-                    <div class="col-sm-4 border" >{{item.employeeNumber}}</div>
-                    <div class="col-sm-8 border text-wrap">{{ item.fullName}}</div>
-                    <!-- <div class="col-sm-4 border">{{item.civilId}}</div> -->
+                <div class="row"  [class.right] ="localize.lang === 'ar'" style=" font-size: medium; ">
+                    <div class="col-sm-2 border" >{{item.code}}</div>
+                    <div class="col-sm-6 border text-wrap">{{localize.currentLang =='Sl' ? item.nameSl : item.nameFl}}</div>
+                    <div class="col-sm-4 border">{{item.code}}</div>
+
+                    <!-- <div class="col-sm-12 border text-wrap">{{ localize.lang === 'ar' ? item.fullNameSl : item.fullNameFl}}</div> -->
                 </div>
             </div>
         </ng-template>

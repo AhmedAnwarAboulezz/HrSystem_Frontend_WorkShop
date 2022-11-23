@@ -152,7 +152,8 @@ export class DataService {
 
   getErrorMessage(error): string {
       let message = '';
-      let errors: Array<any> = error.error.data.errors;
+      debugger;
+      let errors: Array<any> = error.error.errors;
       if (errors instanceof Object) {
         Object.keys(errors).forEach((key) => {
           
