@@ -131,12 +131,12 @@
           </div>
 
           <div *ngIf="col.filterMode && col.filterMode === 'number'">
-            <mat-form-field style="width: 5em;">
+            <!-- <mat-form-field style="width: 5em;">
               <input matInput (input)=" columnSearchHandle($event.target.value, col.field, col.filterMode)" 
               type="number" min="0" >
               
               
-            </mat-form-field>
+            </mat-form-field> -->
           </div>
         </th>
         <th *ngIf="actions"></th>
@@ -193,9 +193,16 @@
             <div *ngIf="col.showMore == true">
               <app-show-more [textValue]="rowData[col.field | translate]"></app-show-more>
             </div>
+            
+
+            <div *ngIf="col.filterMode == 'number' && col.isHoured"
+            [style.background]="rowData[col.field] >= col.minMinutes ? '#25dc25' : '#ff0000'"
+            style="text-align: center; color: white;">      
+            {{ (rowData[col.field] > 0 ?  rowData[col.field] / 60 : 0) | number:'1.2-2'}}      
+            </div>
 
             <div
-            *ngIf="col.filterMode !== 'date' && col.filterMode !== 'datetime'&& col.filterMode !== 'time' && col.filterMode !== 'timeFromDate' && col.filterMode !== 'check' && col.filterMode !== 'file' && col.filterMode !== 'url' && col.translate !== true && col.showMore !== true && col.filterMode !== 'status'">
+            *ngIf="col.filterMode !== 'date' && col.filterMode !== 'datetime'&& col.filterMode !== 'time' && col.filterMode !== 'timeFromDate' && col.filterMode !== 'check' && col.filterMode !== 'file' && col.filterMode !== 'url' && col.translate !== true && col.showMore !== true && col.filterMode !== 'status' && col.filterMode !== 'number'">
               {{ rowData[col.field | translate] }}
           </div>
 

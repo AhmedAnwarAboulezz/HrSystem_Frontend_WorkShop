@@ -64,3 +64,11 @@ export class GetCheckedItemPipe implements PipeTransform {
         else if(res == 1) return true;
     }
   }
+
+
+@Pipe({name: 'round'})
+export class RoundPipe {
+  transform (input:number) {
+    return Math.floor(input);
+  }
+}

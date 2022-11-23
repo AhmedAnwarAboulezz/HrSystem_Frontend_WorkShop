@@ -1125,7 +1125,8 @@
     "logType": "نوع الحركة",
     "logDate": "تاريخ الحركة",
     "logTime": "وقت الحركة",
-    "employeeLogManual": "توقيعات الموظفين"
+    "employeeLogManual": "توقيعات الموظفين",
+    "workingMinutes":"ساعات العمل"
   },
   "employeeLogs": {
     "logTypeName": "نوع الحركة",

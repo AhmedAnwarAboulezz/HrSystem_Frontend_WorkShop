@@ -1161,7 +1161,8 @@
     "logType": "Log Type",
     "logDate": "Log Date",
     "logTime": "Log Time",
-    "employeeLogManual": "Employee Manual Logs"
+    "employeeLogManual": "Employee Manual Logs",
+    "workingMinutes":"Working Hours"
   },
   "employeeLogs": {
     "logTypeName": "Log Type",

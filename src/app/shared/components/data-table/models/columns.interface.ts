@@ -37,7 +37,6 @@ export interface ColumnsInterface {
   translate?: boolean;
   addedText?: any;
   showMore?: boolean;
-
-
-
+isHoured?: boolean;
+minMinutes?:number;
 }

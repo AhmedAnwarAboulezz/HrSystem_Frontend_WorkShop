@@ -1,5 +1,5 @@
 
-import { AuditField, ExcludeItemPipe, FilterPipe, GetCheckedItemPipe, ShowTimeSpanPipe } from './../pipes/filter.pipe';
+import { AuditField, ExcludeItemPipe, FilterPipe, GetCheckedItemPipe, RoundPipe, ShowTimeSpanPipe } from './../pipes/filter.pipe';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,6 +24,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     AuditField,
     ExcludeItemPipe,
     GetCheckedItemPipe,
+    RoundPipe,
     TableDetailsComponent,
     DropdownTableComponent,
     RequiredIfDirective,
@@ -46,6 +47,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     AuditField,
     ExcludeItemPipe,
     GetCheckedItemPipe,
+    RoundPipe,
     TableDetailsComponent,
     DropdownTableComponent,
     RequiredIfDirective,

@@ -108,85 +108,12 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
       sort: true,
       sortName:'gender.nameFl'
 
-    },
-
-    // {
-    //   field: 'isUsePassword',
-    //   header: 'employees.isUsePassword',
-    //   filterMode: 'check',
-      
-    //   selector: true ,
-    //   print: true,
-    //   sort: true     
-    // },
-    // {
-    //   field: 'isUseSmartCard',
-    //   header: 'employees.isUseSmartCard',
-    //   filterMode: 'check',
-      
-    //   selector: true ,
-    //   print: true,
-    //   sort: true     
-    // }
-    // ,
-    // {
-    //   field: 'isUseFingerPrint',
-    //   header: 'employees.isUseFingerPrint',
-    //   filterMode: 'check',
-      
-    //   selector: true ,
-    //   print: true,
-    //   sort: true     
-    // } ,
-    // {
-    //   field: 'isFingerPrintAutoMatch',
-    //   header: 'employees.isFingerPrintAutoMatch',
-    //   filterMode: 'check',
-      
-    //   selector: true ,
-    //   print: true,
-    //   sort: true     
-    // } ,
-    // {
-    //   field: 'isUseFace',
-    //   header: 'employees.isUseFace',
-    //   filterMode: 'check',
-      
-    //   selector: true ,
-    //   print: true,
-    //   sort: true     
-    // },
-    // {
-    //   field: 'isFaceAutoMatch',
-    //   header: 'employees.isFaceAutoMatch',
-    //   filterMode: 'check',
-      
-    //   selector: true ,
-    //   print: true,
-    //   sort: true     
-    // },
-    // {
-    //   field: 'isActiveEmployee',
-    //   header: 'employees.isActiveEmployee',
-    //   filterMode: 'check',
-      
-    //   selector: true ,
-    //   print: true,
-    //   sort: true     
-    // }
+    }
   ];
   public actions: ActionsInterface[] = [
     {
       isEdit: true
     },
-    {
-      
-        name: 'employees.assignemployeegroup',
-        icon: 'person_pin',
-        isView: true
-      
-    }
-    ,
     {
       isDelete: true
     }
@@ -194,9 +121,8 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
 
   getLookups(){
       this.Service.getLookups().subscribe(data => {
-        
-      this.columns[4].filterDropdown = data[0];
-      this.columns[5].filterDropdown = data[1];
+      this.columns[7].filterDropdown = data[0];
+      this.columns[8].filterDropdown = data[1];
 
     });
   }
@@ -204,7 +130,4 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
   addEvent(model: any) {
     super.add(EmployeeComponent, model);
   }
-  viewDetail(model: any) {
-    super.openViewDetail(EmployeeComponent,model);
-   }
 }

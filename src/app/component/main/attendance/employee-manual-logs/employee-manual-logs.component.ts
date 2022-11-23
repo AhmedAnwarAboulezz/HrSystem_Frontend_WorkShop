@@ -79,6 +79,17 @@ export class EmployeeManualLogsComponent extends BaseListComponent implements On
       print: true,
       sort: true
     },
+    {
+      field: 'workingMinutes',
+      header: 'employeeLogManual.workingMinutes',
+      filterMode: 'number',
+      selector: true,
+      print: true,
+      sort: true,
+      isHoured: true,
+      minMinutes: 480
+    },
+    
   ];
   public actions: ActionsInterface[] = [
     {
