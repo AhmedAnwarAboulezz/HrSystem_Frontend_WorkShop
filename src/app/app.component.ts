@@ -61,7 +61,7 @@ export class AppComponent extends BaseComponent {
       console.log("componantName " ,componantName)
 
     }
-    data = this.localizationService.translate.instant(data) + " - AUM6";
+    data = this.localizationService.translate.instant(data) + " - HR-System";
     return data;
   }
  

@@ -152,8 +152,11 @@ export class DataService {
 
   getErrorMessage(error): string {
       let message = '';
-      debugger;
-      let errors: Array<any> = error.error.errors;
+       if (typeof error === 'string') {
+        message = error;
+        return message;
+      } 
+      let errors: Array<any> = error.errors;
       if (errors instanceof Object) {
         Object.keys(errors).forEach((key) => {
           
@@ -167,9 +170,6 @@ export class DataService {
             });
           }
         });
-      } 
-      else if (typeof error.error === 'string') {
-        message = error.error;
       } 
       else {
         message = 'Bad Request';

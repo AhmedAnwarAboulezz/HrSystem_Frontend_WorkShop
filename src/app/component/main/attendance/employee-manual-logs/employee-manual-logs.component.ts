@@ -36,13 +36,13 @@ export class EmployeeManualLogsComponent extends BaseListComponent implements On
       sortName:'employee.code'
     },
     {
-      field: 'nameFl',
+      field: 'field.employeeName',
       header: 'employeeLogManual.employeeName',
       filterMode: 'text',
       selector: true,
       print: true,
       sort: true,      
-      sortName:'employee.name'
+      sortName:'employee.nameFl'
     },
     // {
     //   field: 'field.logTypeName',
@@ -90,14 +90,14 @@ export class EmployeeManualLogsComponent extends BaseListComponent implements On
     }
   ];
   ngOnInit(): void {
-    this.getlogtype();
   }
-  getlogtype() {
-    this.Service.getLogtypes().subscribe(data => {
-      this.columns[2].filterDropdown = data;
-    });
-  }
+
   addEvent(model: any) {
     super.add(EmployeeManualLogComponent, model);
   }
+
+  viewDetail(model: any) {
+    super.openViewDetail(EmployeeManualLogComponent,model);
+   }
+
 }

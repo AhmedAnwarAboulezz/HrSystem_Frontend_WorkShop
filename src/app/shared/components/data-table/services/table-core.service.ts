@@ -6,7 +6,6 @@ import { LoadOpts } from '../models/LoadOpts';
 import { AlertService } from 'src/app/services/AlertService';
 import { Shell } from 'src/app/component/shell';
 import { LocalizationService } from 'src/app/services/localization/localization.service';
-import { AttendanceSearch } from 'src/app/models/attendanceSearch';
 
 @Injectable({
   providedIn: 'root'

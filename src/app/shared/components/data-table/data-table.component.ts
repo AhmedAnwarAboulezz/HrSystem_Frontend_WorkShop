@@ -492,7 +492,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
     // add header logo and company name
     const imageDirection = this.localize.lang == 'ar' ? pageWidth - 55 : 10;
     const companyNameDirection = this.localize.lang == 'en' ? pageWidth - 30 : 15;
-    const companyName = "AUM6";
+    const companyName = "HR-System";
     doc.addImage(image, 'PNG', imageDirection, 0, 40, 20);
     doc.text(companyName, companyNameDirection, 15);
     doc.autoTable({

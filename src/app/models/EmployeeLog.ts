@@ -1,5 +1,5 @@
 export class EmployeeLog {
-    employeeId?: string;
+    employeeId?: number;
     employeeCode?: string;
     employeeName?: string;
     dayDate?: Date;

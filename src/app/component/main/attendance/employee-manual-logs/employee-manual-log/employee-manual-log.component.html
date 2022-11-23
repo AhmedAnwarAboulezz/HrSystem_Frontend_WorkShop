@@ -5,7 +5,6 @@
         <mat-dialog-content class="mat-typography" [formGroup]="form">
         <div class="example-container">
             <div class="col-md-12">
-                {{form.value.employeeId}}
                 <app-select [url]="'Employees/GetDropdownList'" [disabledCondition]="isDisable" formControlName="employeeId"
                 [name]="'field.fullName' | translate" [isSearchable]="true" [hasTemplate]="true" [isMultiple]="false"
                 [placeholder]="'employeeSelect' | translate" (cancelEvent)="onEmployeeCancel()"></app-select>
@@ -26,7 +25,7 @@
                 <input required title="{{'lookup.tooltip' | translate}}" matInput type="time" formControlName="signInTime" placeholder="{{'employeeLogManual.logIn' | translate}}">
             </mat-form-field>
             <mat-form-field appearance="outline" > 
-                <input required title="{{'lookup.tooltip' | translate}}" matInput type="time" formControlName="signOutTime" placeholder="{{'employeeLogManual.logOut' | translate}}">
+                <input  title="{{'lookup.tooltip' | translate}}" matInput type="time" formControlName="signOutTime" placeholder="{{'employeeLogManual.logOut' | translate}}">
             </mat-form-field>
             
         </div>

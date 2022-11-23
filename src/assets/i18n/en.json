@@ -1,5 +1,5 @@
 {
-  "TITLE": "AUM6",
+  "TITLE": "HR-System",
   "HOME": {
     "TITLE": "Hello Angular {{value}}",
     "SELECT": "Change language",

@@ -20,8 +20,8 @@ export class EmployeeManualLogComponent extends BaseEditComponent implements OnI
   model: EmployeeLog = {};
   id: string;
   header = DatePickerHeader;
-  url = 'EmployeeManualLogs/GetAllPaged';
-  baseUrl = 'EmployeeManualLogs/';
+  url = 'EmployeeLogs/GetAllPaged';
+  baseUrl = 'EmployeeLogs/';
   get Service(): ManualLogsService { return Shell.Injector.get(ManualLogsService); }
   constructor(
     public fb: FormBuilder,
@@ -29,8 +29,6 @@ export class EmployeeManualLogComponent extends BaseEditComponent implements OnI
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     super(dialogRef);
-    this.getLookups();
-    debugger;
     if (this.data) {
       this.model = this.data;
       this.isNew = false;
@@ -48,11 +46,6 @@ export class EmployeeManualLogComponent extends BaseEditComponent implements OnI
     });
   }
 
-  getLookups() {
-    this.Service.getAllLogtypes().subscribe(data => {
-        this.logTypes = data;
-      });
-  }
   onEmployeeCancel() {
     this.form.controls['employeeId'].setValue(null);
   }
