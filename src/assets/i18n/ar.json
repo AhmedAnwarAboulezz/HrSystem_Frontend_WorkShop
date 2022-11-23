@@ -333,6 +333,13 @@
   "employees": {
     "employeeNumber": "رقم الموظف",
     "employeeName": "اسم الموظف",
+    "nameFl": "اسم الموظف إنجليزي",
+    "nameSl": "اسم الموظف عربي",
+    "birthDate":"",
+    "address":"العنوان",
+    "phone":"",
+    "country":"الدولة",
+    "managerName":"managerNameSl",
     "civilId": "الرقم المدني",
     "genderName": "النوع",
     "startDate": " تاريخ بداية العمل",
@@ -1632,6 +1639,7 @@
 
   "field": {
     "employeeName": "employeeNameSl",
+    "managerName": "managerNameSl",
     "genderName": "genderNameSl",
     "serviceName": "serviceNameSl",
     "lateRegulationName": "lateRegulationNameSL",

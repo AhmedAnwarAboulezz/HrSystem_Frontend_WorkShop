@@ -81,7 +81,7 @@
           <div class="form-control" *ngIf="col.filterMode && col.filterMode === 'dropdown'">
             <mat-select #sel multiple (valueChange)="columnSearchHandle(sel.value, col.dropdownFilterName)">
               <mat-option *ngFor="let item of col.filterDropdown" [value]="item.id">
-                {{ item.name }}</mat-option>
+                {{ localize.lang =='ar' ? item.nameSl : item.nameFl }}</mat-option>
             </mat-select>
           </div>
 

@@ -351,6 +351,13 @@
   "employees": {
     "employeeNumber": "Employee Number",
     "employeeName": "Employee Name",
+    "nameFl": "English Name",
+    "nameSl": "ِArabic Name",
+    "birthDate":"birthDate",
+    "address":"Address",
+    "phone":"Phone",
+    "country":"Country",
+    "managerName":"Manager",
     "civilId": "Civil Id",
     "genderName": "Gender Name",
     "startDate": "Start Date",
@@ -1648,6 +1655,7 @@
 
   "field": {
     "employeeName": "employeeNameFl",
+    "managerName": "managerNameFl",
     "genderName": "genderNameFl",
     "serviceName": "serviceNameFl",
     "lateRegulationName": "lateRegulationNameFL",

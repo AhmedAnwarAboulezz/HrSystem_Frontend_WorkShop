@@ -11,29 +11,18 @@ export class EmployeeService {
   }
 
 
-  getAdminLevels(): Observable<any> {
-    return this.httpService.get('AdminLevels/GetDropDown');
+  getCountries(): Observable<any> {
+    return this.httpService.get('Countries/GetDropdownList');
   }
-  getFingerPrintSecurityLevels(): Observable<any> {
-    return this.httpService.get('FingerPrintSecurityLevels/GetDropDown');
+  getGenders(): Observable<any> {
+    return this.httpService.get('Genders/GetDropdownList');
   }
-  getDepartments(): Observable<any> {
-    return this.httpService.get('Departments/GetDropDown');
-  }
-  getAccessGroups(): Observable<any> {
-    return this.httpService.get('AccessGroups/GetDropDown');
-  }
-  getGroupsDropDown(): Observable<any> {
-    return this.httpService.get('Groups/GetGroupsDropDown');
-  }
+
   
   getLookups(): Observable<any> {
     const sources = [];   
-    sources.push(this.getAdminLevels());
-    sources.push(this.getFingerPrintSecurityLevels());
-    sources.push(this.getDepartments());
-    sources.push(this.getAccessGroups());
-
+    sources.push(this.getCountries());
+    sources.push(this.getGenders());
     return forkJoin(sources);
   }
 }

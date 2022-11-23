@@ -38,7 +38,7 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
     },
     {
       field: 'nameFl',
-      header: 'employees.employeeNameFirst',
+      header: 'employees.nameFl',
       filterMode: 'text',
       selector: true,
       print: true,
@@ -46,7 +46,7 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
     },
     {
       field: 'nameSl',
-      header: 'employees.employeeNameSecond',
+      header: 'employees.nameSl',
       filterMode: 'text',
       selector: true,
       print: true,
@@ -54,34 +54,61 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
     },
     {
       field: 'phoneNumber',
-      header: 'employees.employeeNameOther',
+      header: 'employees.phone',
       filterMode: 'text',
       selector: true,
       print: true,
       sort: true
     },
-    // {
-    //   field: 'adminLevelName',
-    //   header: 'employees.adminLevel',
-    //   dropdownFilterName: 'adminLevelId',
-    //   filterMode: 'dropdown',
-    //   selector: true,
-    //   print: true,
-    //   sort: true,
-    //   sortName:'adminLevelName'
+    {
+      field: 'address',
+      header: 'employees.address',
+      filterMode: 'text',
+      selector: true,
+      print: true,
+      sort: true
+    },
+    {
+      field: 'birthDate',
+      header: 'employees.birthDate',
+      filterMode: 'date',
+      selector: true,
+      print: true,
+      sort: true
+    },
+    {
+      field: 'field.managerName',
+      header: 'employees.managerName',
+      filterMode: 'text',
+      selector: true,
+      print: true,
+      sort: true,
+      sortName:'manager.nameFl'
+    },
+    
+    
+    {
+      field: 'field.countryName',
+      header: 'employees.country',
+      dropdownFilterName: 'countryIds',
+      filterMode: 'dropdown',
+      selector: true,
+      print: true,
+      sort: true,
+      sortName:'country.nameFl'
 
-    // },
-    // {
-    //   field: 'fingerPrintSecurityLevelName',
-    //   header: 'employees.fingerPrintSecurityLevel',
-    //   dropdownFilterName: 'fingerPrintSecurityLevelId',
-    //   filterMode: 'dropdown',
-    //   selector: true,
-    //   print: true,
-    //   sort: true,
-    //   sortName:'fingerPrintSecurityLevelName'
+    },
+    {
+      field: 'field.genderName',
+      header: 'employees.gender',
+      dropdownFilterName: 'genderIds',
+      filterMode: 'dropdown',
+      selector: true,
+      print: true,
+      sort: true,
+      sortName:'gender.nameFl'
 
-    // },
+    },
 
     // {
     //   field: 'isUsePassword',
@@ -166,12 +193,12 @@ export class EmployeesComponent extends BaseListComponent implements OnInit {
   ];
 
   getLookups(){
-    //   this.Service.getLookups().subscribe(data => {
+      this.Service.getLookups().subscribe(data => {
         
-    //   this.columns[4].filterDropdown = data[0];
-    //   this.columns[5].filterDropdown = data[1];
+      this.columns[4].filterDropdown = data[0];
+      this.columns[5].filterDropdown = data[1];
 
-    // });
+    });
   }
   
   addEvent(model: any) {
